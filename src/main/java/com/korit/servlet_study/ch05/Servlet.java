@@ -3,10 +3,7 @@ package com.korit.servlet_study.ch05;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-
 public abstract class Servlet {
-    private String url;
-
     public void doGet(Request req, Response resp) {
 
     }

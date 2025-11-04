@@ -13,7 +13,7 @@ public class Tomcat {
         request.setMethod("GET");
         request.setData("요청 테스트 데이터");
 
-        Map<String, Servlet>  servletMap = Map.of(
+        Map<String, Servlet> servletMap = Map.of(
                 "/servlet/a", new ServletA(),
                 "/servlet/b", new ServletB()
         );
@@ -29,6 +29,5 @@ public class Tomcat {
 
         System.out.println(response);
         System.out.println("응답");
-
     }
 }

@@ -3,6 +3,7 @@ package com.korit.servlet_study.ch05;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
+
 @AllArgsConstructor
 public class FilterChain {
     private List<Filter> filters;
@@ -21,5 +22,4 @@ public class FilterChain {
             servlet.doPost(req, resp);
         }
     }
-
 }
