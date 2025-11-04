@@ -24,15 +24,23 @@ public class UserRepository {
     public void insert(User user) {
         user.setId(++autoId);
         users.add(user);
-
     }
 
     public User findByUsername(String username) {
-        Optional<User> userOptional = users.stream()
+        return users.stream()
                 .filter(user -> user.getUsername().equals(username))
-                .findFirst();
+                .findFirst()
+                .orElseGet(() -> null);
+    }
 
-        return userOptional.orElseGet(() -> null);
+    public User findByUsernameNonOptional(String username) {
+        List<User> foundUsers = users.stream()
+                .filter(user -> user.getUsername().equals(username))
+                .toList();
+        if (foundUsers.isEmpty()) {
+            return null;
+        }
+        return foundUsers.get(0);
     }
 
     public List<User> findAll() {

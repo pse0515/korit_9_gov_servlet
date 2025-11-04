@@ -16,7 +16,7 @@ public class UserDto {
     private String name;
     private String email;
 
-    private User toUser() {
+    public User toUser() {
         return User.builder()
                 .username(username)
                 .password(password)
@@ -24,4 +24,5 @@ public class UserDto {
                 .email(email)
                 .build();
     }
+
 }

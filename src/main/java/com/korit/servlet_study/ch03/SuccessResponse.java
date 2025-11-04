@@ -9,10 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class SuccessResponse<T> {
     private int status = 200;
     private String message;
     private T body;
-
 }
