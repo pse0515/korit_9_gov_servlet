@@ -27,7 +27,7 @@ public class UserRepository {
     }
 
     public User findByUsername(String username) {
-        users.stream()
+        return users.stream()
                 .filter(user -> user.getUsername().equals(username))
                 .findFirst().get();
     }

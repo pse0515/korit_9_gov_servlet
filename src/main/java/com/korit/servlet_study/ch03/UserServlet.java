@@ -1,19 +1,19 @@
 package com.korit.servlet_study.ch03;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @WebServlet("/ch03/users")
-public class UserServlet  extends HttpServlet {
+public class UserServlet extends HttpServlet {
     private UserRepository userRepository;
-    private List<User> users;
 
     @Override
     public void init() throws ServletException {
@@ -31,11 +31,10 @@ public class UserServlet  extends HttpServlet {
         if (Objects.isNull(foundUser)) {
             ErrorResponse errorResponse = ErrorResponse.builder()
                     .status(400)
-                    .message("이미 존재하는 username 입니다.")
+                    .message("이미 존재하는 username입니다.")
                     .build();
             return;
         }
-        userRepository = UserRepository.insert();
+        userRepository.insert();
     }
 }
-
