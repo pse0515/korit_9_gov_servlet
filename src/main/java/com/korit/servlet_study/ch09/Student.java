@@ -1,14 +1,14 @@
 package com.korit.servlet_study.ch09;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-
+@Getter
+@Setter
+@ToString
 public class Student {
+    private int id;
     private String name;
     private int age;
     private String address;
