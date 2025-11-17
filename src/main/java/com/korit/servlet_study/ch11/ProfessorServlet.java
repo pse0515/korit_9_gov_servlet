@@ -27,6 +27,9 @@ public class ProfessorServlet extends HttpServlet {
         ProfessorService  professorService = new ProfessorService();
         List<Professor> professors = professorService.getProfessors(q);
 
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.writeValue(resp.getWriter(), professors);
+
     }
 }
 
